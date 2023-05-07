@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Web Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        
+     label, input {
+       display: block;
+    }
+
+    body {
+
+background-color: #ff9494; 
+background-image: url('now.jpg');
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: 100% 100%;
+
+
+}
+      
+      .button {
+        background-color: #4CAF50; 
+        border: 2px solid #4CAF50; 
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 10px;
+        width: 100%; 
+        box-sizing: border-box; 
+      }
+
+      
+      #book-now {
+        background-color: #008CBA; 
+        border-color: #ffffff; 
+      }
+
+      
+      #not-showing {
+        background-color: #f44336; 
+        border-color: #ffffff; 
+      }
+
+      
+      .button-container {
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .container {
+			background-color: #f2f2f2;
+			padding: 20px;
+			text-align: center;
+	  	}
+		
+	  .name {
+			
+        font-size: 30px;
+		font-weight: bold;
+		margin: 0;
+	    }
+          
+      .cinema-theatre {
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+       }
+
+      .screen {
+  
+        background-color: black;
+        color: white;
+        padding: 20px;
+        margin-bottom: 20px;
+       }
+
+     .seats {
+ 
+       display: flex;
+       flex-direction: column;
+       gap: 10px;
+      }
+
+     .row {
+  
+      display: flex;
+      gap: 10px;
+     }
+
+
+     .seat {
+
+        width: 40px;
+        height: 40px;
+        background-color: rgb(44, 45, 44);
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .seat.selected {
+ 
+        background-color: rgba(18, 210, 0, 0.875);
+
+    }
+
+    .center-form{
+
+      justify-content: center;
+      display: flex;
+      margin: 10px 10px;
+      border: 3px solid rgb(255, 255, 255);
+      padding: 30px;
+      background-color: rgb(158, 158, 158);
+
+    }
+
+    #total-price {
+  font-weight: bold;
+  }
+
+	
+    </style>
+  </head>
+	
+  <body>
+	<header>
+    
+    <center>
+		  <h1>Welcome to our Movie Ticket Booking Website</h1>
+			<ul>
+				<li><a href="homepage.html">Home</a></li>
+			</ul>
+    </center>
+    
+	</header>
+        <section>
+            <div class="cinema-theatre">
+              <center>
+                <label for="movie">Movie:</label>
+                <select name="movie" id="movie" placeholder="Select Movie" required>
+                  <option value="JOKER">JOKER</option>
+                  <option value="Fast n furious">Fast n Furious</option>
+                  <option value="The Sniper">The Sniper</option>
+                  <option value="Untold">Untold</option>
+                </select>
+                <div class="screen">
+                  <h2>Screen</h2>
+                </div>
+                <div class="seats">
+                  <div class="row">
+                    <div class="seat">1A</div>
+                    <div class="seat">2A</div>
+                    <div class="seat">3A</div>
+                    <div class="seat">4A</div>
+                    <div class="seat">5A</div>
+                    <div class="seat">6A</div>
+                    <div class="seat">7A</div>
+                    <div class="seat">8A</div>
+                    <div class="seat">9A</div>
+                    <div class="seat">10A</div>
+                    <div class="seat">11A</div>
+                    <div class="seat">12A</div>
+                    <div class="seat">13A</div>
+                    <div class="seat">14A</div>
+                    <div class="seat">15A</div>
+
+                  </div>
+                  <div class="row">
+                    <div class="seat">1B</div>
+                    <div class="seat">2B</div>
+                    <div class="seat">3B</div>
+                    <div class="seat">4B</div>
+                    <div class="seat">5B</div>
+                    <div class="seat">6B</div>
+                    <div class="seat">7B</div>
+                    <div class="seat">8B</div>
+                    <div class="seat">9A</div>
+                    <div class="seat">10A</div>
+                    <div class="seat">11A</div>
+                    <div class="seat">12A</div>
+                    <div class="seat">13A</div>
+                    <div class="seat">14A</div>
+                    <div class="seat">15A</div>
+                  </div>
+                  <div class="row">
+                    <div class="seat">1C</div>
+                    <div class="seat">2C</div>
+                    <div class="seat">3C</div>
+                    <div class="seat">4C</div>
+                    <div class="seat">5C</div>
+                    <div class="seat">6C</div>
+                    <div class="seat">7C</div>
+                    <div class="seat">8C</div>
+                    <div class="seat">9C</div>
+                    <div class="seat">10C</div>
+                    <div class="seat">11C</div>
+                    <div class="seat">12C</div>
+                    <div class="seat">13C</div>
+                    <div class="seat">14C</div>
+                    <div class="seat">15C</div>
+                  </div>
+                  
+                </div>
+                
+                <div class="center-form">
+                  
+                  <form onsubmit="return validateForm()">  
+                    <label>Price: <x3 id="total-price"></x3></label>                  
+                    <label for="regId">Registration ID*</label>
+                    <input type="text" id="regId" name="regId" placeholder="Enter registration ID" required>
+              
+                    <label for="username">Username*</label>
+                    <input type="text" id="username" name="username" placeholder="Enter username" required>
+              
+                    <label for="password">Password*</label>
+                    <input type="password" id="password" name="password" placeholder="Enter password" required>
+              
+                    <label for="email">Email*</label>
+                    <input type="email" id="email" name="email" placeholder="Enter email" required>
+              
+                    <label for="mobile">Mobile Number*</label>
+                    <input type="tel" id="mobile" name="mobile" placeholder="Enter mobile number" pattern="[0-9]{10}" required>
+              
+                    <label for="dob">Date of Birth*</label>
+                    <input type="date" id="dob" name="dob" placeholder="DD/MM/YYYY" required>
+
+
+              
+                    <button type="submit">Submit</button>
+                    <button type="button" onclick="resetForm()">Cancel</button>
+                  </form>
+                  </div>
+
+              </center>
+            </div>
+          
+        </section>
+
+    <script>
+      const seats = document.querySelectorAll('.seat');
+          
+          seats.forEach((seat) => {
+            seat.classList.add('available');
+
+          });
+
+            let selectedSeats = [];
+            let totalPrice = 0;
+            seats.forEach(seat => {
+              seat.addEventListener('click', () => {
+                if (seat.classList.contains('available')) {
+                  seat.classList.remove('available');
+                  seat.classList.add('selected');
+                  selectedSeats.push(seat);
+                  totalPrice += 10;
+                } else if (seat.classList.contains('selected')) {
+                  seat.classList.remove('selected');
+                  seat.classList.add('available');
+                  selectedSeats = selectedSeats.filter(s => s !== seat);
+                  totalPrice -= 10;
+                }
+                updateTotalPrice();
+              });
+            });
+
+            function updateTotalPrice(){
+              let pricetag=document.getElementById("total-price");
+              pricetag.innerHTML="₹ "+totalPrice.toString();
+              
+            }
+
+      function validateForm() {
+        const regId = document.getElementById("regId").value;
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+        const email = document.getElementById("email").value;
+        const mobile = document.getElementById("mobile").value;
+        const dob = document.getElementById("dob").value;
+ 
+        
+        if (!/^[\w\d]{2}[A-Z]{2}\d{4}$/.test(regId)) {
+          alert("Please enter a valid registration ID.");
+          return false;
+        }
+
+       
+        if (/\d/.test(username)) {
+          alert("Username should not have any digits.");
+          return false;
+        }
+
+        
+        if (!/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{8,}/.test(password)) {
+          alert("Password should have at least one small case letter, an uppercase letter, a digit, and a special character with a minimum password length of 8.");
+          return false;
+        }
+
+        
+        if (!/^\S+@\S+\.\S+$/.test(email)) {
+          alert("Please enter a valid email address.");
+          return false;
+        }
+
+      
+        if (/^[0]{10}$/.test(mobile) || !/^\d{10}$/.test(mobile)) {
+          alert("Please enter a valid mobile number.");
+          return false;
+        }
+
+
+        return true;
+      }
+
+      function resetForm() {
+        document.getElementById("regId").value = "";
+        document.getElementById("username").value = "";
+        document.getElementById("password").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("mobile").value = "";
+        document.getElementById("dob").value = "";
+  
+     }
+    </script>
+</body> 
+</html>
+		
